@@ -15,6 +15,8 @@ RUN pnpm i
 # copy project files
 COPY --chown=node:node . .
 
+RUN npm pkg delete scripts.prepare
+
 RUN pnpm generate
 
 # build
