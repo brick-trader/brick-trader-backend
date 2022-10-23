@@ -31,6 +31,7 @@ RUN npm i -g pnpm
 WORKDIR /home/node/app/
 COPY --chown=node:node --from=build /app/package.json ./
 COPY --chown=node:node --from=build /app/pnpm-lock.yaml ./
+COPY --chown=node:node --from=build /app/prisma ./
 COPY --chown=node:node --from=build /app/dist ./dist
 COPY --chown=node:node --from=build /app/node_modules ./node_modules
 
